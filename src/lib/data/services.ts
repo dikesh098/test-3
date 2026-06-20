@@ -16,6 +16,135 @@ const standardDigitalProcess = [
 
 export const SERVICES: Service[] = [
   // ---------------------------------------------------------------
+  // DIGITAL
+  // ---------------------------------------------------------------
+  {
+    slug: "website-development",
+    icon: "🌐",
+    category: "digital",
+    name: "Website Development",
+    shortDesc: "Professional, mobile-responsive websites with SEO, contact forms & analytics.",
+    priceDisplay: "₹60,000 – ₹1,50,000",
+    payAmount: 0,
+    featuredOnHome: true,
+    overview:
+      "We design and build fast, mobile-responsive websites that actually represent your brand — not a generic template. Every site includes basic SEO setup, working contact forms, and analytics so you can see who's visiting.",
+    benefits: [
+      "Custom design reflecting your brand, not a recycled template",
+      "Mobile-responsive, fast-loading, and SEO-ready from day one",
+      "Working contact/enquiry forms connected to your inbox",
+      "Analytics setup so you can track visitors and conversions",
+    ],
+    eligibility: ["Any business wanting a new website or a redesign of an existing one"],
+    documents: [
+      "Business name and logo (or we design one)",
+      "Content/text for each page (or we help draft it)",
+      "Photos and brand assets",
+      "Domain name (or we register one for you)",
+      "Hosting preference, if you already have one",
+    ],
+    process: standardDigitalProcess,
+    faqs: [
+      {
+        question: "Do you also handle hosting and domain renewal?",
+        answer:
+          "Yes, we can set up and manage hosting and domain renewal for you, or hand over full access if you'd rather manage it yourself.",
+      },
+    ],
+  },
+  {
+    slug: "app-development",
+    icon: "📱",
+    category: "digital",
+    name: "App Development",
+    shortDesc: "Custom Android & iOS apps — booking systems, ecommerce, service platforms & more.",
+    priceDisplay: "Custom Quote",
+    payAmount: 0,
+    featuredOnHome: true,
+    overview:
+      "From booking systems to ecommerce to internal business tools, we scope and build mobile apps tailored to how your business actually operates — not a one-size-fits-all template.",
+    benefits: [
+      "Native or cross-platform builds for Android and iOS",
+      "Built around your real workflow: bookings, orders, services, or staff tools",
+      "Post-launch support and update plans available",
+    ],
+    eligibility: ["Businesses needing a customer-facing or internal mobile app"],
+    documents: [
+      "App concept / idea brief",
+      "Target audience details",
+      "Key features list",
+      "Design preferences or reference apps",
+      "Timeline and budget range",
+    ],
+    process: standardDigitalProcess,
+    faqs: [],
+  },
+  {
+    slug: "digital-marketing",
+    icon: "📣",
+    category: "digital",
+    name: "Digital Marketing & Social Media",
+    shortDesc: "Google Business, Instagram, Facebook management, content creation & paid ads.",
+    priceDisplay: "₹15,000/month onwards",
+    payAmount: 15000,
+    featuredOnHome: true,
+    overview:
+      "Consistent posting, real engagement, and a clear monthly report — that's what we focus on. From Google Business Profile setup to Instagram/Facebook management and paid ad campaigns, we run it so you can run your business.",
+    benefits: [
+      "Content calendar with regular posts and reels",
+      "Engagement management — comments and DMs handled professionally",
+      "Monthly performance report so you can see what's working",
+      "Optional paid advertising management for faster reach",
+    ],
+    eligibility: ["Any business wanting consistent, professional social media presence"],
+    documents: [
+      "Business name and logo",
+      "Address and contact information",
+      "Photos of your shop, products, or services",
+      "Access to your Google/Instagram/Facebook accounts (or we create new ones)",
+    ],
+    process: standardDigitalProcess,
+    faqs: [
+      {
+        question: "Can you guarantee followers or sales?",
+        answer:
+          "No ethical agency can guarantee specific follower counts or sales — what we commit to is consistent, quality execution and transparent monthly reporting on what's actually happening.",
+      },
+    ],
+  },
+  {
+    slug: "ai-solutions",
+    icon: "🤖",
+    category: "ai",
+    name: "AI Solutions",
+    shortDesc: "Chatbots, workflow automation, and AI tools tailored to your business.",
+    priceDisplay: "Custom Quote",
+    payAmount: 0,
+    featuredOnHome: false,
+    overview:
+      "From a WhatsApp/website chatbot that answers customer questions to automating repetitive back-office work, we design practical AI tools scoped to a real business problem — not AI for its own sake.",
+    benefits: [
+      "Customer-facing chatbots for lead capture and FAQ handling",
+      "Workflow automation for repetitive data entry or document tasks",
+      "Built around the tools you already use, where possible",
+    ],
+    eligibility: ["Businesses with a specific repetitive task or customer-support load to automate"],
+    documents: [
+      "Description of the process or problem you want automated",
+      "Sample data or documents involved in the current process",
+      "Access to relevant existing tools/accounts, if applicable",
+    ],
+    process: [
+      "Discovery call to understand the exact problem worth automating",
+      "We propose the smallest tool that solves it well, with a quote",
+      "Build and test against your real data/workflow",
+      "Launch with a short handover so your team can use it confidently",
+    ],
+    faqs: [],
+  },
+];
+
+ // ---------------------------------------------------------------
   // GOVERNMENT / COMPLIANCE
   // ---------------------------------------------------------------
   {
@@ -445,135 +574,6 @@ export const SERVICES: Service[] = [
     process: standardGovtProcess,
     faqs: [],
   },
-
-  // ---------------------------------------------------------------
-  // DIGITAL
-  // ---------------------------------------------------------------
-  {
-    slug: "website-development",
-    icon: "🌐",
-    category: "digital",
-    name: "Website Development",
-    shortDesc: "Professional, mobile-responsive websites with SEO, contact forms & analytics.",
-    priceDisplay: "₹60,000 – ₹1,50,000",
-    payAmount: 0,
-    featuredOnHome: true,
-    overview:
-      "We design and build fast, mobile-responsive websites that actually represent your brand — not a generic template. Every site includes basic SEO setup, working contact forms, and analytics so you can see who's visiting.",
-    benefits: [
-      "Custom design reflecting your brand, not a recycled template",
-      "Mobile-responsive, fast-loading, and SEO-ready from day one",
-      "Working contact/enquiry forms connected to your inbox",
-      "Analytics setup so you can track visitors and conversions",
-    ],
-    eligibility: ["Any business wanting a new website or a redesign of an existing one"],
-    documents: [
-      "Business name and logo (or we design one)",
-      "Content/text for each page (or we help draft it)",
-      "Photos and brand assets",
-      "Domain name (or we register one for you)",
-      "Hosting preference, if you already have one",
-    ],
-    process: standardDigitalProcess,
-    faqs: [
-      {
-        question: "Do you also handle hosting and domain renewal?",
-        answer:
-          "Yes, we can set up and manage hosting and domain renewal for you, or hand over full access if you'd rather manage it yourself.",
-      },
-    ],
-  },
-  {
-    slug: "app-development",
-    icon: "📱",
-    category: "digital",
-    name: "App Development",
-    shortDesc: "Custom Android & iOS apps — booking systems, ecommerce, service platforms & more.",
-    priceDisplay: "Custom Quote",
-    payAmount: 0,
-    featuredOnHome: true,
-    overview:
-      "From booking systems to ecommerce to internal business tools, we scope and build mobile apps tailored to how your business actually operates — not a one-size-fits-all template.",
-    benefits: [
-      "Native or cross-platform builds for Android and iOS",
-      "Built around your real workflow: bookings, orders, services, or staff tools",
-      "Post-launch support and update plans available",
-    ],
-    eligibility: ["Businesses needing a customer-facing or internal mobile app"],
-    documents: [
-      "App concept / idea brief",
-      "Target audience details",
-      "Key features list",
-      "Design preferences or reference apps",
-      "Timeline and budget range",
-    ],
-    process: standardDigitalProcess,
-    faqs: [],
-  },
-  {
-    slug: "digital-marketing",
-    icon: "📣",
-    category: "digital",
-    name: "Digital Marketing & Social Media",
-    shortDesc: "Google Business, Instagram, Facebook management, content creation & paid ads.",
-    priceDisplay: "₹15,000/month onwards",
-    payAmount: 15000,
-    featuredOnHome: true,
-    overview:
-      "Consistent posting, real engagement, and a clear monthly report — that's what we focus on. From Google Business Profile setup to Instagram/Facebook management and paid ad campaigns, we run it so you can run your business.",
-    benefits: [
-      "Content calendar with regular posts and reels",
-      "Engagement management — comments and DMs handled professionally",
-      "Monthly performance report so you can see what's working",
-      "Optional paid advertising management for faster reach",
-    ],
-    eligibility: ["Any business wanting consistent, professional social media presence"],
-    documents: [
-      "Business name and logo",
-      "Address and contact information",
-      "Photos of your shop, products, or services",
-      "Access to your Google/Instagram/Facebook accounts (or we create new ones)",
-    ],
-    process: standardDigitalProcess,
-    faqs: [
-      {
-        question: "Can you guarantee followers or sales?",
-        answer:
-          "No ethical agency can guarantee specific follower counts or sales — what we commit to is consistent, quality execution and transparent monthly reporting on what's actually happening.",
-      },
-    ],
-  },
-  {
-    slug: "ai-solutions",
-    icon: "🤖",
-    category: "ai",
-    name: "AI Solutions",
-    shortDesc: "Chatbots, workflow automation, and AI tools tailored to your business.",
-    priceDisplay: "Custom Quote",
-    payAmount: 0,
-    featuredOnHome: false,
-    overview:
-      "From a WhatsApp/website chatbot that answers customer questions to automating repetitive back-office work, we design practical AI tools scoped to a real business problem — not AI for its own sake.",
-    benefits: [
-      "Customer-facing chatbots for lead capture and FAQ handling",
-      "Workflow automation for repetitive data entry or document tasks",
-      "Built around the tools you already use, where possible",
-    ],
-    eligibility: ["Businesses with a specific repetitive task or customer-support load to automate"],
-    documents: [
-      "Description of the process or problem you want automated",
-      "Sample data or documents involved in the current process",
-      "Access to relevant existing tools/accounts, if applicable",
-    ],
-    process: [
-      "Discovery call to understand the exact problem worth automating",
-      "We propose the smallest tool that solves it well, with a quote",
-      "Build and test against your real data/workflow",
-      "Launch with a short handover so your team can use it confidently",
-    ],
-    faqs: [],
-  },
-];
 
 export function getServiceBySlug(slug: string): Service | undefined {
   return SERVICES.find((s) => s.slug === slug);
