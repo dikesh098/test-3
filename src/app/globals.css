@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+/* ============================================================
+   eSakha Design Tokens
+   Carried forward 1:1 from the original eSakha site so the
+   upgraded build still reads as "eSakha", not a new brand.
+   ============================================================ */
+@theme inline {
+  --color-brand: #0f7a4a;
+  --color-brand-dark: #094d2e;
+  --color-brand-mid: #1a9960;
+  --color-brand-light: #e6f5ed;
+
+  --color-accent: #f0a500;
+  --color-accent-dark: #c47f00;
+  --color-accent-light: #fff8e6;
+
+  --color-ink: #111827;
+  --color-ink-2: #4b5563;
+  --color-ink-3: #9ca3af;
+
+  --color-surface: #ffffff;
+  --color-surface-2: #f8faf8;
+  --color-surface-3: #f3f4f6;
+
+  --color-line: #e5e7eb;
+  --color-line-2: #d1fae5;
+
+  --font-display: var(--font-syne);
+  --font-body: var(--font-dm-sans);
+
+  --shadow-card: 0 2px 20px rgba(15, 122, 74, 0.08);
+  --shadow-card-lg: 0 8px 48px rgba(15, 122, 74, 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  color: var(--color-ink);
+  background: var(--color-surface);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+/* Scroll-reveal animation primitives (paired with the Reveal component) */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+}
+.reveal-init.reveal-left {
+  transform: translateX(-28px);
+}
+.reveal-init.reveal-right {
+  transform: translateX(28px);
+}
+
+/* Marquee ticker */
+@keyframes esakha-ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: esakha-ticker 35s linear infinite;
+}
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Hero underline sweep on the highlighted word */
+@keyframes esakha-underline {
+  to { transform: scaleX(1); }
+}
+.underline-sweep::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  right: 0;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: esakha-underline 0.9s 0.7s ease forwards;
+}
+
+/* Status blink dot in hero pill */
+@keyframes esakha-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.animate-blink {
+  animation: esakha-blink 1.8s infinite;
+}
+
+/* Gentle float for the WhatsApp button */
+@keyframes esakha-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: esakha-float 3s ease-in-out infinite;
+}
+
+/* Form controls */
+.field-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-line);
+  background: #fff;
+  padding: 11px 14px;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field-input:focus {
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px rgba(15, 122, 74, 0.1);
+}
+.field-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-ink-2);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker, .animate-blink, .animate-float {
+    animation: none;
+  }
+}
