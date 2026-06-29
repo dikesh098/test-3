@@ -19,7 +19,6 @@ const GOVT_LINKS = [
 
 const QUICK_LINKS = [
   { label: "About Us", href: "/about" },
-  { label: "Our Work", href: "/our-work" },
   { label: "Careers", href: "/careers" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
