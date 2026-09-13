@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* ============================================================
+   eSakha — Tech / SaaS Design Tokens
+   Dark base, emerald→cyan gradient identity carried over from
+   the original brand green, glass-panel surfaces.
+   ============================================================ */
+@theme inline {
+  --color-brand: #22c58b;
+  --color-brand-dark: #0b3d2b;
+  --color-brand-mid: #17a97a;
+  --color-brand-light: rgba(34, 197, 139, 0.12);
+
+  --color-accent: #38bdf8;
+  --color-accent-dark: #0ea5c7;
+  --color-accent-light: rgba(56, 189, 248, 0.12);
+
+  --color-ink: #eef2f4;
+  --color-ink-2: #a3b0bd;
+  --color-ink-3: #6b7686;
+
+  --color-surface: #070b12;
+  --color-surface-2: #0c121c;
+  --color-surface-3: #121a27;
+
+  --color-line: rgba(255, 255, 255, 0.09);
+  --color-line-2: rgba(34, 197, 139, 0.28);
+
+  --font-display: var(--font-syne);
+  --font-body: var(--font-dm-sans);
+  --font-mono: var(--font-jetbrains);
+
+  --shadow-card: 0 2px 24px rgba(0, 0, 0, 0.35);
+  --shadow-card-lg: 0 16px 56px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), sans-serif;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  background-image:
+    radial-gradient(ellipse 900px 500px at 15% -10%, rgba(34, 197, 139, 0.16), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 100% 0%, rgba(56, 189, 248, 0.12), transparent 55%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Glass panel — the recurring surface treatment across the site */
+.glass {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.glass-hover {
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+.glass-hover:hover {
+  border-color: rgba(34, 197, 139, 0.35);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+/* Thin gradient rule used as an edge accent on cards/sections */
+.edge-gradient {
+  background: linear-gradient(90deg, var(--color-brand), var(--color-accent));
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #4ee8ab 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Scroll-reveal animation primitives (paired with the Reveal component) */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+}
+.reveal-init.reveal-left {
+  transform: translateX(-28px);
+}
+.reveal-init.reveal-right {
+  transform: translateX(28px);
+}
+
+/* Marquee ticker */
+@keyframes esakha-ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: esakha-ticker 35s linear infinite;
+}
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Hero underline sweep on the highlighted word */
+@keyframes esakha-underline {
+  to { transform: scaleX(1); }
+}
+.underline-sweep::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-brand), var(--color-accent));
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: esakha-underline 0.9s 0.7s ease forwards;
+}
+
+/* Status blink dot in hero pill */
+@keyframes esakha-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.animate-blink {
+  animation: esakha-blink 1.8s infinite;
+}
+
+/* Gentle float for the WhatsApp button */
+@keyframes esakha-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: esakha-float 3s ease-in-out infinite;
+}
+
+/* Form controls */
+.field-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-line);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 11px 14px;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.field-input::placeholder {
+  color: var(--color-ink-3);
+}
+.field-input:focus {
+  border-color: var(--color-brand);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(34, 197, 139, 0.15);
+}
+.field-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-ink-2);
+  margin-bottom: 5px;
+  letter-spacing: 0.03em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker, .animate-blink, .animate-float {
+    animation: none;
+  }
+}
